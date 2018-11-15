@@ -1,1 +1,1 @@
-import './assets/scripts/add-user';
+import './assets/scripts/app';

@@ -48,9 +48,10 @@ export class ErrorMessageRouter {
         });
       }
     }
-
+    
     summaryContainer.innerHTML = errors.join('');
-    summaryContainer.classList.add('has-error');
+    summaryContainer.classList[errors.length > 0 ? 'add': 'remove']('has-error');
+    
 
     return this;
   }

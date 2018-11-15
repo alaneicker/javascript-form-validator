@@ -10,7 +10,7 @@ import { addUserFormRules, loginFormRules } from './rules';
   // -------------------------------
   const addUserFormValidator = new FormValidator(addUserFormRules);
   const addUserForm = document.querySelector('#add-user');
-  const errorSummary = document.querySelector('#error-summary');
+  const addUserErrorSummary = document.querySelector('#adduser-error-summary');
 
   const handleFormSubmit = () => {
     const formData = formToJson(new FormData(addUserForm));
@@ -22,7 +22,7 @@ import { addUserFormRules, loginFormRules } from './rules';
       const errorMessageRouter = new ErrorMessageRouter(addUserForm, validationResponse.data);
       errorMessageRouter
         .setInputErrors()
-        .setErrorSummary(errorSummary);
+        .setErrorSummary(addUserErrorSummary);
     }
   };
 
@@ -35,6 +35,7 @@ import { addUserFormRules, loginFormRules } from './rules';
   // -------------------------------
   const loginFormValidator = new FormValidator(loginFormRules);
   const loginForm = document.querySelector('#login');
+  const loginErrorSummary = document.querySelector('#login-error-summary');
   const inputs = loginForm.querySelectorAll('.input');
 
   [].forEach.call(inputs, input => {
@@ -43,10 +44,10 @@ import { addUserFormRules, loginFormRules } from './rules';
       const validationResponse = loginFormValidator.validate(inputData);
       
       if (typeof validationResponse !== 'undefined') {
-        return new ErrorMessageRouter(loginForm, validationResponse.data).setErrors();
+        const errorMessageRouter = new ErrorMessageRouter(loginForm, validationResponse.data);
+        errorMessageRouter
+          .setInputErrors();
       }
-
-      return;
     });
   });
 }());

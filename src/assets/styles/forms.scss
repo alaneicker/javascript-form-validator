@@ -29,6 +29,7 @@ $errorRed: #cf102d;
 
 .error-container {
   font-size: 12px;
+  font-weight: 500;
   color: $errorRed;
   display: none;
   margin-top: 4px;
@@ -44,15 +45,19 @@ $errorRed: #cf102d;
 
 .error-summary {
   background: lighten($errorRed, 50%);
-  border: 1px solid $errorRed;
   display: none;
   padding: 16px;
+  list-style-type: disc;
+
+  & > * {
+    margin-left: 16px;
+  }
 
   & > * + * {
     margin-top: 4px;
   }
 
-  & > li > a {
+  & > * > a {
     color: $errorRed;
   }
 
