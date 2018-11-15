@@ -8,6 +8,8 @@ A simple utility for managing form validation.
 
 ```html
 <form id="login" name="login" novalidate>
+    
+    <ul id="adduser-error-summary"></ul>
 
     <div class="vr-3">
       <label class="label" for="username">
