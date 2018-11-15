@@ -4,8 +4,10 @@ A simple utility for managing form validation.
 
 ## Validation on Submit
 
+### Form Markup
+
 ```html
-<form id="login" name="login" style="max-width: 400px;" novalidate>
+<form id="login" name="login" novalidate>
 
     <div class="vr-3">
       <label class="label" for="username">
@@ -34,6 +36,51 @@ A simple utility for managing form validation.
   </form>
 ```
 
+### Set the Froms Validation Rules
+
+rules.js
+```javascript
+export const addUserFormRules = {
+  first_name: [
+    {
+      validator: 'required',
+      message: 'First name is required',
+    },
+  ],
+  last_name: [
+    {
+      validator: 'required',
+      message: 'Last name is required',
+    },
+  ],
+};
+```
+
+### Add form Submit Logic
+```javascript
+import { FormValidator, ErrorMessageRouterm, formToJson } from 'javascript-form-validator';
+import { addUserFormRules } from './rules';
+
+const handleFormSubmit = () => {
+    const formData = formToJson(new FormData(addUserForm));
+    const validationResponse = addUserFormValidator.validate(formData);
+    const isValid = validationResponse.errors === 0;
+
+    if (!isValid) {
+        // Handle validation errors
+        return;
+    }
+    
+    // Submit form
+};
+
+addUserForm.onsubmit = e => {
+    e.preventDefault();
+    handleFormSubmit();
+};
+```
+
+### Validation Respose
 The `FormValidator` API returns a validation response object. 
 ```json
 {
