@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>JS Form Validation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="styles/app.css">
+</head>
+  <body>
+
+    <h2 class="vr-3">Form Validation on Submit</h2>
+
+    <form id="add-user" name="adduser" style="max-width: 400px;" novalidate>
+
+      <div class="vr-3">
+        <label class="label" for="first-name">
+          <span class="label__asterisk">*</span>
+          First Name
+        </label>
+        <div class="vr-top">
+          <input class="input" type="text" name="first_name" id="first-name">
+          <ul class="error-container" data-error-for="first_name"></ul>
+        </div>
+      </div>
+
+      <div class="vr-3">
+        <label class="label" for="first-name">
+          <span class="label__asterisk">*</span>
+          Last Name
+        </label>
+        <div class="vr-top">
+          <input class="input" type="text" name="last_name" id="last-name">
+          <ul class="error-container" data-error-for="last_name"></ul>
+        </div>
+      </div>
+
+      <!--<div class="vr-3"></div>
+        <label for="options1"></label>
+        <div class="vr-top vr-3">
+          <select class="input" name="options1" id="options1">
+            <option value="">SELECT AN OPTION</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+          <ul class="error-container" data-error-for="options1"></ul>
+        </div>
+      </div>-->
+
+      <button type="submit" class="button">Submit</button>
+
+    </form>
+
+    <div class="vr-4 vr-4-top"></div>
+
+    <h2 class="vr-3">Form Validation on Input</h2>
+
+    <form id="login" name="login" style="max-width: 400px;" novalidate>
+
+      <div class="vr-3">
+        <label class="label" for="username">
+          <span class="label__asterisk">*</span>
+          Username
+        </label>
+        <div class="vr-top">
+          <input class="input" type="text" name="username" id="username">
+          <ul class="error-container" data-error-for="username"></ul>
+        </div>
+      </div>
+
+      <div class="vr-3">
+        <label class="label" for="password">
+          <span class="label__asterisk">*</span>
+          Password
+        </label>
+        <div class="vr-top">
+          <input class="input" type="text" name="password" id="password">
+          <ul class="error-container" data-error-for="password"></ul>
+        </div>
+      </div>
+
+      <!--<div class="vr-3"></div>
+        <label for="options"></label>
+        <div class="vr-top vr-3">
+          <select class="input" name="options" id="options">
+            <option value="">SELECT AN OPTION</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+          <ul class="error-container" data-error-for="options"></ul>
+        </div>
+      </div>-->
+
+      <button type="submit" class="button">Log In</button>
+
+    </form>
+
+  </body>
+
+</html>
