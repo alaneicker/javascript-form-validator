@@ -143,6 +143,8 @@ Takes 2 required arguments.
 2. **Type:** [object]
 
 ```javascript
+const validationResponse = addUserFormValidator.validate(formData);
+
 const errorMessageRouter = new ErrorMessageRouter(
     document.querySelector('#my-form'),
     validationResponse.data
