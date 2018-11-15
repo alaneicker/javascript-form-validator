@@ -2,7 +2,7 @@
 
 A simple utility for managing form validation.
 
-## Validation on Submit
+## FormValidator
 
 ### Form Markup
 
@@ -109,6 +109,14 @@ The `FormValidator` API returns a validation response object.
 }
 ```
 
+### API
+
+#### `validate`
+
+Takes 1 required argument
+
+1. **Type:** [object]
+
 ## ErrorMessageRouter
 You can use the validation response to set your own custom error messaging, or you use the `ErrorMessageRouter` class to handle the error messaging automagically.
 
@@ -121,19 +129,19 @@ const isValid = validationResponse.errors === 0;
 
 (!isValid && new ErrorMessageRouter(addUserForm, validationResponse.data).setErrors());
 ```
-## API
+### API
 
-### `constructor`
+#### `constructor`
 
 Takes 2 required arguments
 
 1. **Type:** [object HTMLFormElement]
 2. **Type:** [object]
 
-### `setInputErrors`
+#### `setInputErrors`
 
 Uses the valiadtion data object to set error messages for individual input fields.
 
-### `setErrorSummary`
+#### `setErrorSummary`
 
 Uses the valiadtion data object to set an error summary listing all errors for a form.
