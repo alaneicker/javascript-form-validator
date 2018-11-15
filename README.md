@@ -66,12 +66,11 @@ const addUserFormRules = {
 
 ### Validation on Submit
 ```javascript
-const addUserFormValidator = new FormValidator(addUserFormRules);
-const addUserForm = document.querySelector('#add-user');
-const addUserErrorSummary = document.querySelector('#adduser-error-summary');
-
-addUserForm.onsubmit = e => {
+document.querySelector('#add-user').onsubmit = e => {
     e.preventDefault();
+    
+    const addUserFormValidator = new FormValidator(addUserFormRules);
+    const addUserErrorSummary = document.querySelector('#adduser-error-summary');
 
     const formData = formToJson(new FormData(addUserForm));
     const validationResponse = addUserFormValidator.validate(formData);
