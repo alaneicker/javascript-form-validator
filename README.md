@@ -137,7 +137,7 @@ const addUserForm = document.querySelector('#add-user');
 const validationResponse = addUserFormValidator.validate(formData); 
 const isValid = validationResponse.errors === 0;
 
-(!isValid && new ErrorMessageRouter(addUserForm, validationResponse.data).setErrors());
+(!isValid && new ErrorMessageRouter(addUserForm, validationResponse.data).setInputErrors());
 ```
 
 That's it! The ErrorMessageRouter will find the container associated with the error and append the appropriate message text.
