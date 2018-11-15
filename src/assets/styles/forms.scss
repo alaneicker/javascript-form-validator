@@ -1,3 +1,5 @@
+$errorRed: #cf102d;
+
 .label {
   font-size: 13px;
   font-weight: 600;
@@ -5,7 +7,7 @@
   align-items: center;
 
   &__asterisk {
-    color: red;
+    color: $errorRed;
     margin-right: 4px;
     display: inline-block;
   }
@@ -21,13 +23,13 @@
   width: 100%;
 
   &.has-error {
-    border-color: red;
+    border-color: $errorRed;
   }
 }
 
 .error-container {
   font-size: 12px;
-  color: red;
+  color: $errorRed;
   display: none;
   margin-top: 4px;
 
@@ -38,4 +40,23 @@
 
 .has-error ~ .error-container {
   display: block;
+}
+
+.error-summary {
+  background: lighten($errorRed, 50%);
+  border: 1px solid $errorRed;
+  display: none;
+  padding: 16px;
+
+  & > * + * {
+    margin-top: 4px;
+  }
+
+  & > li > a {
+    color: $errorRed;
+  }
+
+  &.has-error {
+    display: block;
+  }
 }

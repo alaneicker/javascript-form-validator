@@ -3,7 +3,7 @@ export class ErrorMessageRouter {
     this.form = form;
     this.validationData = validationData;
   }
-  setErrors() {
+  setInputErrors() {
     const { validationData } = this;
     
     for (let field in validationData) {
@@ -28,5 +28,30 @@ export class ErrorMessageRouter {
         input.classList[errors > 0 ? 'add' : 'remove']('has-error');
       }
     }
+
+    return this;
+  }
+  setErrorSummary(summaryContainer) {
+    const { validationData } = this;
+    const errors = [];
+
+    for (let field in validationData) {
+      if (validationData.hasOwnProperty(field)) {
+        validationData[field].results.forEach(validation => {
+          const validators = Object.keys(validation);
+    
+          validators.forEach(rule => {
+            if (validation[rule] === 'invalid') {
+              errors.push(`<li><a href="#${field}">${validation.message}</a></li>`);
+            }
+          });
+        });
+      }
+    }
+
+    summaryContainer.innerHTML = errors.join('');
+    summaryContainer.classList.add('has-error');
+
+    return this;
   }
 }

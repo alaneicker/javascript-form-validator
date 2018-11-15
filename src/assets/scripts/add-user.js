@@ -10,13 +10,20 @@ import { addUserFormRules, loginFormRules } from './rules';
   // -------------------------------
   const addUserFormValidator = new FormValidator(addUserFormRules);
   const addUserForm = document.querySelector('#add-user');
+  const errorSummary = document.querySelector('#error-summary');
 
   const handleFormSubmit = () => {
     const formData = formToJson(new FormData(addUserForm));
     const validationResponse = addUserFormValidator.validate(formData);
     const isValid = validationResponse.errors === 0;
     
-    (!isValid && new ErrorMessageRouter(addUserForm, validationResponse.data).setErrors());
+    //(!isValid && new ErrorMessageRouter(addUserForm, validationResponse.data).setInputErrors());
+    if (!isValid) {
+      const errorMessageRouter = new ErrorMessageRouter(addUserForm, validationResponse.data);
+      errorMessageRouter
+        .setInputErrors()
+        .setErrorSummary(errorSummary);
+    }
   };
 
   addUserForm.onsubmit = e => {
