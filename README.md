@@ -80,7 +80,7 @@ addUserForm.onsubmit = e => {
 };
 ```
 
-### Validation Respose
+### Validation Resposne
 The `FormValidator` API returns a validation response object. 
 ```json
 {
@@ -108,5 +108,20 @@ The `FormValidator` API returns a validation response object.
 }
 ```
 
+## ErrorMessageRouter
 You can use the validation response to set your ouwn custom error messaging, or you use the `ErrorMessageRouter` class to handle the error messaging automagically.
 
+Initialize the `ErrorMessageRouter` class and call the `setErrors()` method.
+```javascript
+const addUserForm = document.querySelector('#add-user');
+const validationResponse = addUserFormValidator.validate(formData); 
+const isValid = validationResponse.errors === 0;
+
+(!isValid && new ErrorMessageRouter(addUserForm, validationResponse.data).setErrors());
+```
+
+**ErrorMessageRouter API**
+
+**Constructor:** Takes 2 required arguments
+- Form reference
+- validation response data
