@@ -4,6 +4,12 @@ A simple utility for managing form validation.
 
 ## FormValidator
 
+### Installing the From Validator
+
+```
+[sudo] npm install -S @alaneicker/javascript-form-validator
+```
+
 ### Form Markup
 
 ```html
