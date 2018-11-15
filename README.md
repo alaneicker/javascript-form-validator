@@ -38,6 +38,8 @@ A simple utility for managing form validation.
 </form>
 ```
 
+Note: The error containers below the form fields are not required unless using the `ErrorMessageRouter`.
+
 ### Import the FormValidator, ErrorMessageRouter and Optional Utilities
 ```javascript
 import { FormValidator, ErrorMessageRouter } from 'javascript-form-validator';
