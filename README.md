@@ -117,7 +117,7 @@ const inputs = form.querySelectorAll('.input');
 
 
 ### Validation Response Object
-The `FormValidator.validate()` API returns a validation response object containg validation data associated with each form field from the original form data object. 
+The `FormValidator.validate()` API returns a validation response object containing validation data associated with each form field from the original form data object. 
 
 Note: Only form fields with errors return an `message` property.
 ```json
