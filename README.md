@@ -58,7 +58,8 @@ export const addUserFormRules = {
 
 ### Add Form Submit Logic
 ```javascript
-import { FormValidator, ErrorMessageRouterm, formToJson } from 'javascript-form-validator';
+import { FormValidator, ErrorMessageRouterm } from 'javascript-form-validator';
+import { formToJson } from 'javascript-form-validator/utilities';
 import { addUserFormRules } from './rules';
 
 const handleFormSubmit = () => {
