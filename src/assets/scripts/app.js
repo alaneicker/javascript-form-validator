@@ -12,7 +12,9 @@ import { addUserFormRules, loginFormRules } from './rules';
   const addUserForm = document.querySelector('#add-user');
   const addUserErrorSummary = document.querySelector('#adduser-error-summary');
 
-  const handleFormSubmit = () => {
+  addUserForm.onsubmit = e => {
+    e.preventDefault();
+    
     const formData = formToJson(new FormData(addUserForm));
     const validationResponse = addUserFormValidator.validate(formData);
     const isValid = validationResponse.errors === 0;
@@ -25,16 +27,10 @@ import { addUserFormRules, loginFormRules } from './rules';
     }
   };
 
-  addUserForm.onsubmit = e => {
-    e.preventDefault();
-    handleFormSubmit();
-  };
-
   // validate on input
   // -------------------------------
   const loginFormValidator = new FormValidator(loginFormRules);
   const loginForm = document.querySelector('#login');
-  const loginErrorSummary = document.querySelector('#login-error-summary');
   const inputs = loginForm.querySelectorAll('.input');
 
   [].forEach.call(inputs, input => {
