@@ -68,36 +68,37 @@ const addUserFormRules = {
 ```javascript
 document.querySelector('#add-user').onsubmit = e => {
     e.preventDefault();
-    
-    const addUserFormValidator = new FormValidator(addUserFormRules);
-    const addUserErrorSummary = document.querySelector('#adduser-error-summary');
 
-    const formData = formToJson(new FormData(addUserForm));
-    const validationResponse = addUserFormValidator.validate(formData);
+    const form = e.target;
+    const formValidator = new FormValidator(addUserFormRules);
+    const errorSummary = document.querySelector('#adduser-error-summary');
+
+    const formData = formToJson(new FormData(form));
+    const validationResponse = formValidator.validate(formData);
     const isValid = validationResponse.errors === 0;
 
     if (!isValid) {
-      const errorMessageRouter = new ErrorMessageRouter(addUserForm, validationResponse.data);
+      const errorMessageRouter = new ErrorMessageRouter(form, validationResponse.data);
       errorMessageRouter
         .setInputErrors()
-        .setErrorSummary(addUserErrorSummary);
+        .setErrorSummary(errorSummary);
     }
 };
 ```
 
 ### Validation on Input
 ```javascript
-const loginFormValidator = new FormValidator(loginFormRules);
-const loginForm = document.querySelector('#login');
-const inputs = loginForm.querySelectorAll('.input');
+const formValidator = new FormValidator(loginFormRules);
+const form = document.querySelector('#login');
+const inputs = form.querySelectorAll('.input');
 
 [].forEach.call(inputs, input => {
     input.addEventListener('input', e => {
       const inputData = { [e.target.name]: e.target.value };
-      const validationResponse = loginFormValidator.validate(inputData);
+      const validationResponse = formValidator.validate(inputData);
 
       if (typeof validationResponse !== 'undefined') {
-        const errorMessageRouter = new ErrorMessageRouter(loginForm, validationResponse.data);
+        const errorMessageRouter = new ErrorMessageRouter(form, validationResponse.data);
         errorMessageRouter.setInputErrors();
       }
     });
