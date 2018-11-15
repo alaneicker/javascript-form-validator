@@ -56,7 +56,7 @@ export const addUserFormRules = {
 };
 ```
 
-### Add form Submit Logic
+### Add Form Submit Logic
 ```javascript
 import { FormValidator, ErrorMessageRouterm, formToJson } from 'javascript-form-validator';
 import { addUserFormRules } from './rules';
@@ -113,10 +113,6 @@ You can use the validation response to set your own custom error messaging, or y
 
 Once your form has validated and returns a response, initialize the `ErrorMessageRouter` class and call the `setErrors()` method. 
 
-The `ErrorMessageRouter` constructor takes 2 required arguments:
-1. A reference to the form element
-2. The validation response data object
-
 ```javascript
 const addUserForm = document.querySelector('#add-user');
 const validationResponse = addUserFormValidator.validate(formData); 
@@ -124,3 +120,19 @@ const isValid = validationResponse.errors === 0;
 
 (!isValid && new ErrorMessageRouter(addUserForm, validationResponse.data).setErrors());
 ```
+## `ErrorMessageRouter` API
+
+### `constructor`
+
+**Arguments**
+
+1. **Type:** [object HTMLFormElement]: **Required**: Yes
+2. **Type:** [object]: **Required**: Yes
+
+### `setInputErrors`
+
+Uses the valiadtion data object to set error messages for individual input fields.
+
+### `setErrorSummary`
+
+Uses the valiadtion data object to set an error summary listing all errors for a form.
