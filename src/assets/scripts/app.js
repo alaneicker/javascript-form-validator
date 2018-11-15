@@ -40,8 +40,7 @@ import { addUserFormRules, loginFormRules } from './rules';
       
       if (typeof validationResponse !== 'undefined') {
         const errorMessageRouter = new ErrorMessageRouter(loginForm, validationResponse.data);
-        errorMessageRouter
-          .setInputErrors();
+        errorMessageRouter.setInputErrors();
       }
     });
   });
