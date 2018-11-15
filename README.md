@@ -113,9 +113,13 @@ The `FormValidator` API returns a validation response object.
 
 #### `validate`
 
-Takes 1 required argument
+Takes 1 required argument.
 
 1. **Type:** [object]
+
+```javascript
+FormValidator.validate(formData)
+```
 
 ## ErrorMessageRouter
 You can use the validation response to set your own custom error messaging, or you use the `ErrorMessageRouter` class to handle the error messaging automagically.
@@ -133,10 +137,17 @@ const isValid = validationResponse.errors === 0;
 
 #### `constructor`
 
-Takes 2 required arguments
+Takes 2 required arguments.
 
 1. **Type:** [object HTMLFormElement]
 2. **Type:** [object]
+
+```javascript
+const errorMessageRouter = new ErrorMessageRouter(
+    document.querySelector('#my-form'),
+    validationResponse.data
+);
+```
 
 #### `setInputErrors`
 
