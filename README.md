@@ -167,6 +167,9 @@ Uses the valiadtion data object to set error messages for individual input field
 #### `setErrorSummary`
 
 Uses the valiadtion data object to set an error summary listing all errors for a form.
+```html
+<ul id="error-summary" class="error-summary"></ul>
+```
 ```javascript
 const errorSummary = document.querySelector('#error-summary');
 errorMessageRouter.setErrorSummary(errorSummary);
