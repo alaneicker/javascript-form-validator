@@ -121,7 +121,7 @@ const isValid = validationResponse.errors === 0;
 
 (!isValid && new ErrorMessageRouter(addUserForm, validationResponse.data).setErrors());
 ```
-## `ErrorMessageRouter` API
+## API
 
 ### `constructor`
 
