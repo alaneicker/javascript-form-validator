@@ -130,7 +130,7 @@ For each of you inputs, add an error message container.
 <ul class="error-container" data-error-for="first_name"></ul>
 ```
 
-Once your form has validated and returns a response, initialize the `ErrorMessageRouter` class and call the `setErrors()` method. 
+Once your form has validated and returns a response, initialize the `ErrorMessageRouter` class and call the `setErrors()` method.
 
 ```javascript
 const addUserForm = document.querySelector('#add-user');
@@ -139,6 +139,8 @@ const isValid = validationResponse.errors === 0;
 
 (!isValid && new ErrorMessageRouter(addUserForm, validationResponse.data).setErrors());
 ```
+
+That's it! The ErrorMessageRouter will find the error container associated with the error and append the appropriate error message text.
 
 ### API
 
