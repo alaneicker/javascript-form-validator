@@ -36,11 +36,15 @@ A simple utility for managing form validation.
   </form>
 ```
 
-### Set the Froms Validation Rules
-
-rules.js
+### Import the FormValidator, ErrorMessageRouterm and Optional Utilities
 ```javascript
-export const addUserFormRules = {
+import { FormValidator, ErrorMessageRouterm } from 'javascript-form-validator';
+import { formToJson } from 'javascript-form-validator/utilities';
+```
+
+### Set the Froms Validation Rules
+```javascript
+const addUserFormRules = {
   first_name: [
     {
       validator: 'required',
@@ -58,11 +62,9 @@ export const addUserFormRules = {
 
 ### Add Form Submit Logic
 ```javascript
-import { FormValidator, ErrorMessageRouterm } from 'javascript-form-validator';
-import { formToJson } from 'javascript-form-validator/utilities';
-import { addUserFormRules } from './rules';
-
-const handleFormSubmit = () => {
+addUserForm.onsubmit = e => {
+    e.preventDefault();
+    
     const formData = formToJson(new FormData(addUserForm));
     const validationResponse = addUserFormValidator.validate(formData);
     const isValid = validationResponse.errors === 0;
@@ -73,11 +75,6 @@ const handleFormSubmit = () => {
     }
     
     // Submit form
-};
-
-addUserForm.onsubmit = e => {
-    e.preventDefault();
-    handleFormSubmit();
 };
 ```
 
