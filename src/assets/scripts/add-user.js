@@ -1,6 +1,6 @@
 import { FormValidator, ErrorMessageRouter } from '../../../libs';
+import { formToJson } from '../../../libs/utilities';
 import { addUserFormRules, loginFormRules } from './rules';
-import { formToJson } from './utilities/form';
 
 (function () {
 
