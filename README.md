@@ -80,7 +80,7 @@ addUserForm.onsubmit = e => {
 };
 ```
 
-### Validation Resposne
+### Validation Response
 The `FormValidator` API returns a validation response object. 
 ```json
 {
