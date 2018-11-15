@@ -6,8 +6,10 @@ A simple utility for managing form validation.
 
 ### Installing the From Validator
 
+Depending on your permissions, you may need to run the install command with `sudo`.
+
 ```
-[sudo] npm install -S @alaneicker/javascript-form-validator
+npm install -S @alaneicker/javascript-form-validator
 ```
 
 ### Form Markup
