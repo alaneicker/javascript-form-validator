@@ -33,7 +33,7 @@ A simple utility for managing form validation.
 
     <button type="submit" class="button">Log In</button>
 
-  </form>
+</form>
 ```
 
 ### Import the FormValidator, ErrorMessageRouterm and Optional Utilities
