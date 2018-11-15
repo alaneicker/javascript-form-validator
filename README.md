@@ -115,7 +115,7 @@ Once your form has validated and returns a response, initialize the `ErrorMessag
 
 The `ErrorMessageRouter` constructor takes 2 required arguments:
 1. A reference to the form element
-2. the validation response data object
+2. The validation response data object
 
 ```javascript
 const addUserForm = document.querySelector('#add-user');
