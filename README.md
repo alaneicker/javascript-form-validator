@@ -87,6 +87,7 @@ document.querySelector('#add-user').onsubmit = e => {
 
     if (!isValid) {
       const errorMessageRouter = new ErrorMessageRouter(form, validationResponse.data);
+      
       errorMessageRouter
         .setInputErrors()
         .setErrorSummary(errorSummary);
@@ -107,6 +108,7 @@ const inputs = form.querySelectorAll('.input');
 
       if (typeof validationResponse !== 'undefined') {
         const errorMessageRouter = new ErrorMessageRouter(form, validationResponse.data);
+        
         errorMessageRouter.setInputErrors();
       }
     });
