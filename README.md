@@ -124,10 +124,10 @@ const isValid = validationResponse.errors === 0;
 
 ### `constructor`
 
-**Arguments**
+Takes 2 required arguments
 
-1. **Type:** [object HTMLFormElement]: **Required**: Yes
-2. **Type:** [object]: **Required**: Yes
+1. **Type:** [object HTMLFormElement]
+2. **Type:** [object]
 
 ### `setInputErrors`
 
