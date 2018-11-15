@@ -38,9 +38,9 @@ A simple utility for managing form validation.
 </form>
 ```
 
-### Import the FormValidator, ErrorMessageRouterm and Optional Utilities
+### Import the FormValidator, ErrorMessageRouter and Optional Utilities
 ```javascript
-import { FormValidator, ErrorMessageRouterm } from 'javascript-form-validator';
+import { FormValidator, ErrorMessageRouter } from 'javascript-form-validator';
 import { formToJson } from 'javascript-form-validator/utilities';
 ```
 
