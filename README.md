@@ -109,9 +109,14 @@ The `FormValidator` API returns a validation response object.
 ```
 
 ## ErrorMessageRouter
-You can use the validation response to set your ouwn custom error messaging, or you use the `ErrorMessageRouter` class to handle the error messaging automagically.
+You can use the validation response to set your own custom error messaging, or you use the `ErrorMessageRouter` class to handle the error messaging automagically.
 
-Initialize the `ErrorMessageRouter` class and call the `setErrors()` method.
+Once your form has validated and returns a response, initialize the `ErrorMessageRouter` class and call the `setErrors()` method. 
+
+The `ErrorMessageRouter` constructor takes 2 required arguments:
+1. A reference to the form element
+2. the validation response data object
+
 ```javascript
 const addUserForm = document.querySelector('#add-user');
 const validationResponse = addUserFormValidator.validate(formData); 
@@ -119,9 +124,3 @@ const isValid = validationResponse.errors === 0;
 
 (!isValid && new ErrorMessageRouter(addUserForm, validationResponse.data).setErrors());
 ```
-
-**ErrorMessageRouter API**
-
-**Constructor:** Takes 2 required arguments
-- Form reference
-- validation response data
