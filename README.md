@@ -124,6 +124,12 @@ FormValidator.validate(formData)
 ## ErrorMessageRouter
 You can use the validation response to set your own custom error messaging, or you use the `ErrorMessageRouter` class to handle the error messaging automagically.
 
+For each of you inputs, add an error message container.
+```html
+<input type="text" name="first_name" id="first_name">
+<ul class="error-container" data-error-for="first_name"></ul>
+```
+
 Once your form has validated and returns a response, initialize the `ErrorMessageRouter` class and call the `setErrors()` method. 
 
 ```javascript
@@ -133,6 +139,7 @@ const isValid = validationResponse.errors === 0;
 
 (!isValid && new ErrorMessageRouter(addUserForm, validationResponse.data).setErrors());
 ```
+
 ### API
 
 #### `constructor`
