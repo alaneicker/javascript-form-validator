@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open",
-    "prod": "cross-env NODE_ENV=production webpack && git add -A dist",
+    "prod": "cross-env NODE_ENV=production webpack",
     "publish:major": "npm version major -m \"Upgrade to %s\" && npm publish --access public",
     "publish:minor": "npm version minor -m \"Upgrade to %s\" && npm publish --access public",
     "publish:patch": "npm version patch -m \"Upgrade to %s\" && npm publish --access public",
