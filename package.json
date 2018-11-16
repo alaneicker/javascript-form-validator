@@ -1,7 +1,7 @@
 {
   "name": "@alaneicker/javascript-form-validator",
   "version": "0.0.0",
-  "description": "",
+  "description": "A simple utility for managing form validation",
   "main": "index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open",
