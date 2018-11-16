@@ -112,6 +112,19 @@ const inputs = form.querySelectorAll('.input');
 });
 ```
 
+### Adding a Custom Validators
+```javascript
+const formValidator = new FormValidator(loginFormRules);
+
+formValidator.addValidators({
+    confirmPassword(value) {
+        return value === formData.password;
+    }
+    ...
+});
+```
+
+Note: Be sure to add a validation rule for your custom validator.
 
 ### Validation Response Object
 The `FormValidator.validate()` API returns a validation response object containing validation data associated with each form field from the original form data object. 
