@@ -47,6 +47,18 @@ npm install javascript-form-validator
 Note: The error containers below the form fields are not required unless using the `ErrorMessageRouter`.
 
 ### Import the FormValidator, ErrorMessageRouter and Optional Utilities
+
+Script tage on page
+```javascript
+<script src="node_modules/javascript-form-validator/dist/index.min.js"></script>
+```
+
+CommonJS
+```javascript
+const formValidator = require('javascript-form-validator');
+```
+
+ES6 Import
 ```javascript
 import { FormValidator, ErrorMessageRouter, formToJson } from 'javascript-form-validator';
 ```
