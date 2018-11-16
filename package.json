@@ -2,7 +2,7 @@
   "name": "@alaneicker/js-form-validator",
   "version": "1.0.0",
   "description": "",
-  "main": "libs/index.js",
+  "main": "index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open",
     "prod": "cross-env NODE_ENV=production webpack",
