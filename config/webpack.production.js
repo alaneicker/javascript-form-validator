@@ -12,6 +12,7 @@ module.exports = webpackMerge(baseConfig, {
     path: path.join(__dirname, '..' , DIRECTORY_DEST),
     filename: 'index.js',
     libraryTarget: 'umd',
+    globalObject: 'this',
   },
   module: {
     rules: [
