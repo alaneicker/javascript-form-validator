@@ -6,11 +6,11 @@ const { DIRECTORY_LIBS, DIRECTORY_DEST } = process.env;
 
 module.exports = webpackMerge(baseConfig, {
   entry: [
-    `./${DIRECTORY_LIBS}/index.min.js`,
+    `./${DIRECTORY_LIBS}/index.js`,
   ],
   output: {
     path: path.join(__dirname, '..' , DIRECTORY_DEST),
-    filename: 'index.js',
+    filename: 'index.min.js',
     libraryTarget: 'umd',
     globalObject: 'this',
   },
