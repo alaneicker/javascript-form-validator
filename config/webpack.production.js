@@ -6,7 +6,7 @@ const { DIRECTORY_LIBS, DIRECTORY_DEST } = process.env;
 
 module.exports = webpackMerge(baseConfig, {
   entry: [
-    `./${DIRECTORY_LIBS}/index.js`,
+    `./${DIRECTORY_LIBS}/index.min.js`,
   ],
   output: {
     path: path.join(__dirname, '..' , DIRECTORY_DEST),
