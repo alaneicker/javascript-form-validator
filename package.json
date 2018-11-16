@@ -1,14 +1,14 @@
 {
-  "name": "javascript-form-validator",
+  "name": "@alaneicker/javascript-form-validator",
   "version": "0.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open",
     "prod": "cross-env NODE_ENV=production webpack && git add -A dist",
-    "publish:major": "npm version major -m \"Upgrade to %s\" && npm publish",
-    "publish:minor": "npm version minor -m \"Upgrade to %s\" && npm publish",
-    "publish:patch": "npm version patch -m \"Upgrade to %s\" && npm publish",
+    "publish:major": "npm version major -m \"Upgrade to %s\" && npm publish --access public",
+    "publish:minor": "npm version minor -m \"Upgrade to %s\" && npm publish --access public",
+    "publish:patch": "npm version patch -m \"Upgrade to %s\" && npm publish --access public",
     "postversion": "git push && git push --tags && rm -rf dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
