@@ -19,7 +19,7 @@ module.exports = webpackMerge(baseConfig, {
   ],
   output: {
     path: path.join(__dirname, DIRECTORY_DEST),
-    filename: '[name].js',
+    filename: 'index.js',
   },
   devServer: {
     contentBase: path.join(__dirname, DIRECTORY_SRC),
