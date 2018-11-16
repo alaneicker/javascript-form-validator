@@ -23,7 +23,7 @@
   "keywords": [
     "form",
     "validation",
-    "javascript"
+    "validator"
   ],
   "license": "MIT",
   "devDependencies": {
