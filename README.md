@@ -142,8 +142,6 @@ Note: Only form fields with errors return an `message` property.
 }
 ```
 
-## Validation on Submit
-
 ### API
 
 #### `validate`
