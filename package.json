@@ -13,7 +13,7 @@
     "type": "git",
     "url": "https://github.com/alaneicker/javascript-form-validator.git"
   },
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.1.2",
     "@babel/core": "^7.1.2",
