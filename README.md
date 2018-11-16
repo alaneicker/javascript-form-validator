@@ -51,7 +51,7 @@ Note: The error containers below the form fields are not required unless using t
 import { FormValidator, ErrorMessageRouter, formToJson } from 'javascript-form-validator';
 ```
 
-### Set the Froms Validation Rules
+### Set the Form's Validation Rules
 ```javascript
 const addUserFormRules = {
   first_name: [
