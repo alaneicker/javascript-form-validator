@@ -11,7 +11,7 @@
   "author": "Alan Eicker <alaneicker@gmail.com> (http://www.alaneicker.com)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/alaneicker/javascript-form-validator"
+    "url": "https://github.com/alaneicker/javascript-form-validator.git"
   },
   "license": "ISC",
   "devDependencies": {
