@@ -48,8 +48,7 @@ Note: The error containers below the form fields are not required unless using t
 
 ### Import the FormValidator, ErrorMessageRouter and Optional Utilities
 ```javascript
-import { FormValidator, ErrorMessageRouter } from 'javascript-form-validator';
-import { formToJson } from 'javascript-form-validator/utilities';
+import { FormValidator, ErrorMessageRouter, formToJson } from 'javascript-form-validator';
 ```
 
 ### Set the Froms Validation Rules
