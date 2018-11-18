@@ -1,3 +1,6 @@
+## 11/18/2018 - v1.1.2
+- Updated README.md - Adds missing dist folder and adds .npmignore
+
 ## 11/18/2018 - v1.1.1
 - Updated README.md - Adds missing dist folder to package.
 

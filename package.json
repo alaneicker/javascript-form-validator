@@ -12,9 +12,6 @@
     "postversion": "git push && git push --tags && rm -rf dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "files": [
-    "/dist"
-  ],
   "author": "Alan Eicker <alaneicker@gmail.com> (http://www.alaneicker.com)",
   "repository": {
     "type": "git",
