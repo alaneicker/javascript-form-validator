@@ -7,7 +7,7 @@ A simple utility for managing form validation.
 Depending on your permissions, you may need to run the install command with `sudo`.
 
 ```
-npm install javascript-form-validator
+npm install js-form-validator
 ```
 
 ### Form Markup
@@ -36,17 +36,17 @@ Note: The error containers below the form fields are not required unless using t
 
 Script tage on page
 ```javascript
-<script src="node_modules/javascript-form-validator/dist/index.min.js"></script>
+<script src="node_modules/js-form-validator/dist/index.min.js"></script>
 ```
 
 CommonJS
 ```javascript
-const formValidator = require('javascript-form-validator');
+const formValidator = require('js-form-validator');
 ```
 
 ES6 Import
 ```javascript
-import { FormValidator, ErrorMessageRouter, formToJson } from 'javascript-form-validator';
+import { FormValidator, ErrorMessageRouter, formToJson } from 'js-form-validator';
 ```
 
 ### Set the Form's Validation Rules
