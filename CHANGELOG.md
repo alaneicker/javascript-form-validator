@@ -1,4 +1,4 @@
-## 11/18/2018 - v1.1.2
+## 11/18/2018 - v1.1.3
 - Updated README.md - Changes postversion script to postpublish
 
 ## 11/18/2018 - v1.1.2
