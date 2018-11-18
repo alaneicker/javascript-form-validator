@@ -1,6 +1,6 @@
 {
   "name": "javascript-form-validator",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A simple utility for managing form validation",
   "main": "index.js",
   "scripts": {
