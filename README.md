@@ -7,7 +7,7 @@ A simple utility for managing form validation.
 Depending on your permissions, you may need to run the install command with `sudo`.
 
 ```
-npm install js-form-validator
+npm install @alaneicker/js-form-validator
 ```
 
 ### Form Markup
