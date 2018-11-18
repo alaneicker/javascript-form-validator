@@ -17,11 +17,11 @@ npm install javascript-form-validator
 
   <ul id="error-summary"></ul>
     
-  <label class="label" for="username"><span>*</span> Username</label>
+  <label for="username"><span>*</span> Username</label>
   <input type="text" name="username" id="username">
   <ul data-error-for="username"></ul> <!-- error container -->
   
-  <label class="label" for="password"><span>*</span> Password</label>
+  <label for="password"><span>*</span> Password</label>
   <input type="text" name="password" id="password">
   <ul data-error-for="password"></ul> <!-- error container -->
   
