@@ -15,7 +15,7 @@ npm install javascript-form-validator
 ```html
 <form id="login-form" novalidate>
 
-  <ul id="adduser-error-summary"></ul>
+  <ul id="error-summary"></ul>
     
   <label class="label" for="username"><span>*</span> Username</label>
   <input type="text" name="username" id="username">
