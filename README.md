@@ -36,17 +36,17 @@ Note: The error containers below the form fields are not required unless using t
 
 Script tage on page
 ```javascript
-<script src="node_modules/js-form-validator/dist/index.min.js"></script>
+<script src="node_modules/@alaneicker/js-form-validator/dist/index.min.js"></script>
 ```
 
 CommonJS
 ```javascript
-const formValidator = require('js-form-validator');
+const formValidator = require('@alaneicker/js-form-validator');
 ```
 
 ES6 Import
 ```javascript
-import { FormValidator, ErrorMessageRouter, formToJson } from 'js-form-validator';
+import { FormValidator, ErrorMessageRouter, formToJson } from '@alaneicker/js-form-validator';
 ```
 
 ### Set the Form's Validation Rules
