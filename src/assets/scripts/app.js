@@ -17,14 +17,11 @@ import { addUserFormRules, loginFormRules } from './rules';
     
     const formData = formToJson(new FormData(addUserForm));
     const validationResponse = addUserFormValidator.validate(formData);
-    const isValid = validationResponse.totalErrors === 0;
+    const errorMessageRouter = new ErrorMessageRouter(addUserForm, validationResponse.data);
     
-    if (!isValid) {
-      const errorMessageRouter = new ErrorMessageRouter(addUserForm, validationResponse.data);
-      errorMessageRouter
-        .setInputErrors()
-        .setErrorSummary(addUserErrorSummary);
-    }
+    errorMessageRouter
+      .setInputErrors()
+      .setErrorSummary(addUserErrorSummary);
   };
 
   // validate on input
