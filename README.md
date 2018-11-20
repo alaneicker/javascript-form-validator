@@ -71,22 +71,14 @@ const addUserFormRules = {
 ```javascript
 document.querySelector('#add-user').onsubmit = e => {
     e.preventDefault();
-
-    const form = e.target;
-    const formValidator = new FormValidator(addUserFormRules);
-    const errorSummary = document.querySelector('#adduser-error-summary');
-
-    const formData = formToJson(new FormData(form));
-    const validationResponse = formValidator.validate(formData);
-    const isValid = validationResponse.totalErrors === 0;
-
-    if (!isValid) {
-      const errorMessageRouter = new ErrorMessageRouter(form, validationResponse.data);
-      
-      errorMessageRouter
-        .setInputErrors()
-        .setErrorSummary(errorSummary);
-    }
+    
+    const formData = formToJson(new FormData(addUserForm));
+    const validationResponse = addUserFormValidator.validate(formData);
+    const errorMessageRouter = new ErrorMessageRouter(addUserForm, validationResponse.data);
+    
+    errorMessageRouter
+      .setInputErrors()
+      .setErrorSummary(addUserErrorSummary);
 };
 ```
 
