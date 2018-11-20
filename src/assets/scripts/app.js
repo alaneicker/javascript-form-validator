@@ -17,7 +17,7 @@ import { addUserFormRules, loginFormRules } from './rules';
     
     const formData = formToJson(new FormData(addUserForm));
     const validationResponse = addUserFormValidator.validate(formData);
-    const isValid = validationResponse.errors === 0;
+    const isValid = validationResponse.totalErrors === 0;
     
     if (!isValid) {
       const errorMessageRouter = new ErrorMessageRouter(addUserForm, validationResponse.data);
