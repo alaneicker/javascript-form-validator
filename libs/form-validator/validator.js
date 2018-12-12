@@ -76,7 +76,7 @@ export class FormValidator {
   
   static alpha(value) {
     if (value !== '') {
-      return value.match(/^[A-Za-z]+$/);
+      return value.match(/^[A-Za-z]+$/) !== null;
     } else {
       return true;
     }
