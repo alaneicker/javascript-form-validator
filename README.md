@@ -122,22 +122,22 @@ The `FormValidator.validate()` API returns a validation response object containi
 Note: Only form fields with errors return an `message` property.
 ```json
 {
-   "totalErrors":2,
-   "data":{
-      "first_name":{
-         "errors":1,
-         "results":[
+   "totalErrors": 2,
+   "data": {
+      "first_name": {
+         "errors": 1,
+         "results": [
             {
-               "required":"invalid",
-               "message":"First name is required"
+               "required": "invalid",
+               "message": "First name is required"
             }
          ]
       },
-      "last_name":{
-         "errors":1,
-         "results":[
+      "last_name": {
+         "errors": 1,
+         "results": [
             {
-               "required":"valid"
+               "required": "valid"
             }
          ]
       }
