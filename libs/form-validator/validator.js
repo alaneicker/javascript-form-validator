@@ -2,26 +2,21 @@
 export class FormValidator {
   constructor(formRules) {
     this.formRules = formRules;
-    this.bindInputEvents();
   }
   
-  bindInputEvents() {
-    for (let field in this.formRules) {
-      if (this.formRules.hasOwnProperty(field)) {
-        document
-          .querySelector(`[name="${field}"]`)
-          .addEventListener('input', () => this.validate({ [field]: field.value }));
-      }
-    }
+  bindInputEventsOnInvalid(validationData) {
+    
   }
   
   validate(fields) {
     let data = {};
     let totalErrors = 0;
+    let fieldValidations;
     
     for (let fieldName in fields) {
+      
       if (fields.hasOwnProperty(fieldName)) {
-          const fieldValidations = data[fieldName] = {
+          fieldValidations = data[fieldName] = {
             errors: 0,
             results: [],
           };
@@ -54,6 +49,10 @@ export class FormValidator {
             );
           });
       }
+    }
+    
+    if (totalErrors > 0) {
+      this.bindInputEventsOnInvalid(data);
     }
     
     return {
