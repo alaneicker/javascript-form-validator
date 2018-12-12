@@ -2,6 +2,16 @@
 export class FormValidator {
   constructor(formRules) {
     this.formRules = formRules;
+    this.bindInputEvents();
+  }
+  bindInputEvents() {
+    for (let field in this.formRules) {
+      if (this.formRules.hasOwnProperty(field)) {
+        document
+          .querySelector(`[name="${field}"]`)
+          .addEventListener('input', () => this.validate({ [field]: field.value }));
+      }
+    }
   }
   validate(fields) {
     let data = {};
