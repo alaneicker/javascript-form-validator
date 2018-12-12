@@ -74,6 +74,14 @@ export class FormValidator {
     }
   }
   
+  static alpha(value) {
+    if (value !== '') {
+      return value.match(/^[A-Za-z]+$/);
+    } else {
+      return true;
+    }
+  }
+  
   static number(value) {
     if (value !== '') {
       return isNaN(value) ? false : true;
