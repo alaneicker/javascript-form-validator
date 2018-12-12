@@ -5,7 +5,17 @@ export class FormValidator {
   }
   
   bindInputEventsOnInvalid(validationData) {
-    
+    for (let field in validationData) {
+      if (validationData.hasOwnProperty(field)) {
+        const invalidFields = validationData[field].results.filter(res => res.message !== undefined);
+        
+        if (invalidFields.length > 0) {
+          document
+            .querySelector(`[name="${field}"]`)
+            .addEventListener('input', e => this.validate({ [field]: e.target.value }));
+        }
+      }
+    }
   }
   
   validate(fields) {
