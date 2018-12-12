@@ -4,6 +4,7 @@ export class FormValidator {
     this.formRules = formRules;
     this.bindInputEvents();
   }
+  
   bindInputEvents() {
     for (let field in this.formRules) {
       if (this.formRules.hasOwnProperty(field)) {
@@ -13,6 +14,7 @@ export class FormValidator {
       }
     }
   }
+  
   validate(fields) {
     let data = {};
     let totalErrors = 0;
