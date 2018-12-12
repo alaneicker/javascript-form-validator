@@ -26,6 +26,7 @@ export class ErrorMessageRouter {
         errorContainer.innerHTML = errorMessages.join('');
   
         input.classList[errors > 0 ? 'add' : 'remove']('has-error');
+        input.setAttribute('aria-invalid', 'true');
       }
     }
 
