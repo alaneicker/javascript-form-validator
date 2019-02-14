@@ -127,4 +127,33 @@ export class FormValidator {
       return true;
     }
   }
+  
+  static zipCode(val) {
+    if (val !== '') {
+      const pattern = /(^\d{5}$)|(^\d{5}-\d{4}$)/;
+      return pattern.test(val);
+    } else {
+      return true;
+    }
+  }
+  
+  static creditCard(val) {
+    if (val !== '') {
+      const value = parseFloat(val.replace(/\s/g, '')).toString();
+
+      if (value.match(/^(6011|65|64[4-9]|622)/) && value.length === 16) {
+        return true;
+      } else if (value.match(/^(5[0-5])/) && value.length === 16) {
+        return true;
+      } else if (value.slice(0,2).match(/^(34|37)/) && value.length === 15) {
+        return true;
+      } else if (value.slice(0,1) === '4' && value.length >= 13) {
+        return true;
+      } else {
+        return false;
+      }
+    } else {
+      return true;
+    }
+  }
 }
