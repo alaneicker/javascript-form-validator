@@ -73,7 +73,7 @@ document.querySelector('#add-user').onsubmit = e => {
     e.preventDefault();
     
     const formData = formToJson(new FormData(addUserForm));
-    const validationResponse = addUserFormValidator.validate(formData);
+    const validationResponse = formValidator.validate(formData);
     const errorMessageRouter = new ErrorMessageRouter(addUserForm, validationResponse.data);
     
     errorMessageRouter
