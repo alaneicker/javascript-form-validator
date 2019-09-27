@@ -2,7 +2,7 @@
 
 A simple utility for managing form validation.
 
-### Installing the From Validator
+### Installing the Form Validator
 
 Depending on your permissions, you may need to run the install command with `sudo`.
 
