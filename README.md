@@ -1,6 +1,6 @@
-# JavaScript Form Validator
+## JavaScript Form Validator
 
-A simple utility for managing form validation.
+The Form Validator provides a simple JavaScript API for managing form validation through simple configurations rules. 
 
 ### Installing the Form Validator
 
@@ -51,17 +51,17 @@ import { FormValidator, ErrorMessageRouter, formToJson } from '@alaneicker/js-fo
 
 ### Set the Form's Validation Rules
 ```javascript
-const addUserFormRules = {
-  first_name: [
+const loginFormRules = {
+  username: [
     {
       validator: 'required',
-      message: 'First name is required',
+      message: 'Username is required',
     },
   ],
-  last_name: [
+  password: [
     {
       validator: 'required',
-      message: 'Last name is required',
+      message: 'Password is required',
     },
   ],
 };
@@ -69,24 +69,26 @@ const addUserFormRules = {
 
 ### Validation on Submit
 ```javascript
-document.querySelector('#add-user').onsubmit = e => {
-    e.preventDefault();
-    
-    const formData = formToJson(new FormData(addUserForm));
-    const validationResponse = formValidator.validate(formData);
-    const errorMessageRouter = new ErrorMessageRouter(addUserForm, validationResponse.data);
-    
-    errorMessageRouter
-      .setInputErrors()
-      .setErrorSummary(addUserErrorSummary);
+document.querySelector('#login-form').onsubmit = e => {
+  e.preventDefault();
+  
+  const formValidator = new FormValidator(loginFormRules);
+  const form = document.querySelector('#login-form');
+  const formData = formToJson(new FormData(form));
+  
+  const validationResponse = formValidator.validate(formData);
+  const errorMessageRouter = new ErrorMessageRouter(addUserForm, validationResponse.data);
+  
+  errorMessageRouter
+    .setInputErrors()
+    .setErrorSummary(addUserErrorSummary);
 };
 ```
 
 ### Validation on Input
 ```javascript
 const formValidator = new FormValidator(loginFormRules);
-const form = document.querySelector('#login');
-const inputs = form.querySelectorAll('.input');
+const inputs = document.querySelectorAll('#login-form .input');
 
 [].forEach.call(inputs, input => {
     input.addEventListener('input', e => {
@@ -124,16 +126,16 @@ Note: Only form fields with errors return an `message` property.
 {
    "totalErrors": 2,
    "data": {
-      "first_name": {
+      "username": {
          "errors": 1,
          "results": [
             {
                "required": "invalid",
-               "message": "First name is required"
+               "message": "Username is required"
             }
          ]
       },
-      "last_name": {
+      "password": {
          "errors": 1,
          "results": [
             {
@@ -162,18 +164,19 @@ You can use the validation response to set your own custom error messaging, or y
 
 For each of you inputs, add an error message container.
 ```html
-<input type="text" name="first_name" id="first_name">
-<ul class="error-container" data-error-for="first_name"></ul>
+<input type="text" name="username" id="username">
+<ul class="error-container" data-error-for="username"></ul>
 ```
 
 Once your form has validated and returns a response, initialize the `ErrorMessageRouter` class and call the `setErrors()` method.
 
 ```javascript
-const addUserForm = document.querySelector('#add-user');
-const validationResponse = addUserFormValidator.validate(formData); 
+const formValidator = new FormValidator(loginFormRules);
+const loginForm = document.querySelector('#login-form');
+const validationResponse = formValidator.validate(formData); 
 const isValid = validationResponse.errors === 0;
 
-(!isValid && new ErrorMessageRouter(addUserForm, validationResponse.data).setInputErrors());
+(!isValid && new ErrorMessageRouter(loginForm, validationResponse.data).setInputErrors());
 ```
 
 That's it! The ErrorMessageRouter will find the container associated with the error and append the appropriate message text.
@@ -188,10 +191,10 @@ Takes 2 required arguments.
 2. **Type:** [object]
 
 ```javascript
-const validationResponse = addUserFormValidator.validate(formData);
+const validationResponse = formValidator.validate(formData);
 
 const errorMessageRouter = new ErrorMessageRouter(
-    document.querySelector('#my-form'),
+    document.querySelector('#login-form'),
     validationResponse.data
 );
 ```
