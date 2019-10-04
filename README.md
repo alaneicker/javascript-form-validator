@@ -1,6 +1,6 @@
 ## JavaScript Form Validator
 
-The Form Validator provides a simple JavaScript API for managing form validation through simple configuration rules. 
+The Form Validator provides a simple JavaScript API for managing form validation through simple configuration rules. The validation response can be used with an optional `ErrorMessageRouter` class to set form validation errors for each input or an error summary for the entire form.
 
 ### Installing the Form Validator
 
